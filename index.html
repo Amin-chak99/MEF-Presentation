@@ -1,0 +1,389 @@
+<!doctype html>
+<style>
+.aqw{max-width:100%
+width:450px;
+height:450px ;
+}
+.caroussel_diapo{
+				margin-left:650px;
+				margin-top:30px;
+				margin-bottom:400px;}
+				
+	
+.caroussel_diapo input{position:absolute;left:-9999px}
+    
+
+
+.contenu_carou {
+
+width:350px;
+height:202px;
+
+
+perspective:4000px}
+
+
+.caroussel{
+
+transform-style:preserve-3d;
+position:relative;
+width:350px;
+height:202px;
+transition:1s
+	
+	}
+
+.caroussel .aqw {
+	
+position:absolute;
+top:20%;left:0;
+outline:1px solid transparent;
+backface-visibility:hidden;
+transition:1s
+	
+	}
+
+.caroussel .aqw{filter:blur(3px);opacity:.5}	
+.caroussel .aqw:nth-child(1){transform:translate3d(0,0,650px) scale(.5)}
+.caroussel .aqw:nth-child(2){transform:rotateY(45deg) translateZ(650px) scale(.5)}
+.caroussel .aqw:nth-child(3){transform:rotateY(90deg) translateZ(600px) scale(.5)}
+.caroussel .aqw:nth-child(4){transform:rotateY(135deg) translateZ(600px) scale(.5)}
+.caroussel .aqw:nth-child(5){transform:rotateY(180deg) translateZ(600px) scale(.5)}
+
+.caroussel_diapo input[type=radio] + label {
+	
+cursor:pointer;
+background:hsl(203,77%,81%);
+display:inline-block;
+width:20px;
+border-radius:50%;
+height:20px
+	
+	}
+	
+.caroussel_diapo input[type=radio]:checked + label{background:hsl(203,77%,61%)}
+
+.caroussel_diapo label{background:hsl(203,77%,61%)}
+
+
+
+.caroussel_diapo input[name="rotation"]:checked ~ .contenu_carou .caroussel img:nth-child(n){
+	filter:drop-shadow(12px 12px 7px hsla(0,0%,0%,.5))
+	
+	}	
+
+/*gauche*/
+.caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel{transform:translateZ(-650px)}
+.caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel{transform:translateZ(-650px) rotateY(-45deg)}
+.caroussel_diapo #carou_trois:checked ~ .contenu_carou .caroussel{transform:translateZ(-600px) rotateY(-90deg)}
+.caroussel_diapo #carou_quatre:checked ~ .contenu_carou .caroussel{transform:translateZ(-600px) rotateY(-135deg)}
+.caroussel_diapo #carou_cinq:checked ~ .contenu_carou .caroussel{transform:translateZ(-600px) rotateY(-180deg)}
+
+
+
+/*droite*/
+.caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel img:nth-child(1){transform:translateZ(540px) scale(1);opacity:1}
+.caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel img:nth-child(2){transform:rotateY(45deg) translateZ(540px) scale(1);opacity:1}
+.caroussel_diapo #carou_trois:checked ~ .contenu_carou .caroussel img:nth-child(3){transform:rotateY(90deg) translateZ(540px) scale(1);opacity:1}
+.caroussel_diapo #carou_quatre:checked ~ .contenu_carou .caroussel img:nth-child(4){transform:rotateY(135deg) translateZ(540px) scale(1);opacity:1}
+.caroussel_diapo #carou_cinq:checked ~ .contenu_carou .caroussel img:nth-child(5){transform:rotateY(180deg) translateZ(540px) scale(1);opacity:1}
+
+</style>
+<html>
+<title> Sociéte MEF </title>
+
+
+<head> 
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="icon" type="image/ico.png" href="im4.png"/>
+<meta charset="utf-8">
+</head>
+<body>
+<header>
+<br>
+<p class="mef" >Maintenance Electro Froid</p>
+<p class="red"> FROID INDUSTRIEL  ET CLIMATISATION</p>
+<p class="red">EN TOUTES APPLICATIONS</p>
+<p>Electricité Industriel</p>
+</header>
+<div class="menu-bar">
+
+<ul >
+<li class="active" class="bloc1"><a href="index.html"><i class="fa fa-home" ></i>Accueil</a></li> 
+<li class="bloc1"><a href="Presentation.html" ><i class="fa fa-id-card" ></i>Presentation</a></li>
+<li class="bloc1"><a href="activites.html"><i class="fa fa-clone"></i>Activites</a>
+   <div class="sub-menu-1">
+      <ul>
+         <li ><a href="ClimatisationCentrale.html">Climatisation Centrale</a></li>
+         <li><a href="ChambreFroid.html">Chambre Froid</a></li>
+       </ul>
+   </div>
+ </li>
+<li class="bloc1"><a href="Projet.html"><i class="fa fa-tasks" ></i>Projet</a>
+   <div class="sub-menu-2">
+      <ul>
+         <li><a href="ProjetenCours.html">Projet en Cours</a></li>
+         <li><a href="ProjetRealises.html">Projet Realises</a></li>
+         <li><a href="ProjetPlanifié.html">Projet Planifié</a></li>
+       </ul>
+   </div>
+   </li>
+
+<li class="bloc1"><a href="contact.html"><i class="fa fa-phone"></i>contact</a></li>
+<li class="bloc1"><a href="Recrutement.html"><i class="fa fa-user-plus"></i>Recrutement</a></li>
+
+</ul  >
+
+</div>
+<section>
+<article>
+<div class='caroussel_diapo'>
+<input checked id="carou_un" name="rotation" type="radio">
+<label for="carou_un"></label>
+<input id="carou_deux" name="rotation" type="radio">
+<label for="carou_deux"></label>
+<input id="carou_trois" name="rotation" type="radio">
+<label for="carou_trois"></label>
+<input id="carou_quatre" name="rotation" type="radio">
+<label for="carou_quatre"></label>
+<input id="carou_cinq" name="rotation" type="radio">
+<label for="carou_cinq"></label>
+<label for="carou_huit"></label>
+<div class="contenu_carou">
+<div class="caroussel">
+<img src="img/za.jpg" class="aqw" alt>
+<img src="img/zr.jpg" class="aqw"  alt>
+<img src="img/ze.jpg" class="aqw"  alt>
+<img src="img/zt.jpg" class="aqw"  alt>
+<img src="img/arm1.jpg" class="aqw"  alt>
+</div>
+</div>
+</div>
+</article>
+</section>
+<div class="pre-hr">
+<HR class="hb1" WIDTH="95%" height="800px" color="blue" size=5 NOSHAde >
+
+</div>
+<section>
+<article>
+<div class="maindiv1">
+</div>
+<div class="text-div1" >
+<h1 class="bn"><b  >BIENVENUE SUR NOTRE SITE WEB</b><h1>
+<p class="text10">Fondée en 1998 par Mr.Mounir CHAKROUN,MEF a toujours été<br>
+au service de ses clients sur tout le territoire Tunisien 24h/24, 
+7j/7.<br>MEF offre une gamme complète de services on shore:
+</p>
+</div>
+
+<div class="text-div2">
+<UL 	class="bb" >
+		<LI class='aa'><i class="fa fa-arrow-circle-right" ></i>&nbsp; Maintenance des Climatisation </LI>
+		<LI class='aa'><i class="fa fa-arrow-circle-right" ></i>&nbsp; Instalation Climatisation Centrale</LI>
+		<LI class='aa'><i class="fa fa-arrow-circle-right"></i>&nbsp;  Etude Chambre Froid</LI>
+		<LI class='aa'><i class="fa fa-arrow-circle-right"></i>&nbsp;  Instalation Chambre froid</LI>
+		<LI class='aa'><i class="fa fa-arrow-circle-right"></i>&nbsp;  Etude Armoire Elèctique</LI>
+		<LI class='aa'><i class="fa fa-arrow-circle-right"></i>&nbsp;  Fabrication Armoire Elèctique</LI>
+
+	</UL>
+
+</div>
+
+<div class="maindiv2">
+</div>
+<div>
+<p class="vs"><a href="Presentation.html" class="vs1">Voir La Suite<a></p>
+</div>
+</article>
+</section>
+
+<article>
+<section class="con">
+
+</article>
+</section>
+<p class="conn" >
+Qui somme nous?
+</p>
+<p class="connt" >
+<a href="contact.html">Contact<a>
+</p>
+<div class="np">
+
+</div>
+<div class="sert">
+
+</div>
+<div class="azed">
+<div class="NOS-VALEURS">
+NOS VALEURS
+</div>
+<div class="nova">
+<p> <b>MEF</b> possède une longue expérience dans le<br>
+ domaine de la climatisation et du froid industriel. L’essentiel <br>
+ de l’effectif est composé de techniciens spécialisés dans les<br> 
+ métiers de la climatisation, du froid.</p>
+</div>
+</div>
+
+
+
+
+<div class="azed1">
+<div class="NOS-VALEURS">
+Profitez de notre experience
+</div>
+<div class="nova">
+Pour nous, l'honnêteté est la seule politique et nous nous<br> 
+efforçons de mener à bien tous les projets avec intégrité, <br> 
+non seulement avec nos clients, mais aussi avec nos entrepreneurs.<br> 
+</div>
+</div>
+
+<div class="azed2">
+<div class="NOS-VALEURS">
+A PROPOS DE NOUS
+</div>
+<div class="nova">
+Choisissez parmi nos solutions de maintenance préventive ou <br> 
+curative et bénéficiez de l’expertise d’une équipe technique <br> 
+réactive et efficace.
+</div>
+</div>
+
+<div class="azed4">
+<div class="nova">
+<p><a href="projet.html">voir tous nos projets<a>
+</p>
+</div>
+</div>
+
+
+<div class="azed3">
+<div class="nova">
+<p>Depuis plus de 21 ans, <b>MEF</b> propose une large gamme de services <br> 
+de climatisation , chaufage et de froid indistriels dans toute la <br> 
+tunisie. Nous nous efforçons de maintenir.</p>
+</div>
+</div>
+
+
+<article>
+<section class="con">
+
+</article>
+</section>
+<p class="conn" >
+Nos partenaires<p>
+
+<DIV class="ime"></div>
+<DIV class="ime1"></div>
+<DIV class="ime2"></div>
+<DIV class="ime3"></div>
+<DIV class="ime4"></div>
+
+
+<HR class="hb1" WIDTH="95%" height="800px" color="blue" size=5 NOSHAde >
+
+
+<section>
+<article>
+<div id='conteneur'>
+<div>
+<h3 class="clt" > &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  Nos Client:</h3>
+</div>
+		<ul class="client">
+		<li><img src="img/gch.png" width='204' height='160' /></li>
+			<li><img src="img/fsi.jpg" width='204' height='160' /></li>
+			
+			
+			<li><img src="img/tt.png" width='204' height='160' /></li>
+			<li><img src="img/olm.png" width='204' height='160' /></li>
+			
+			<li><img src="img/cp.png" width='204' height='160' /></li>
+			<li><img src="img/ch.png" width='204' height='160' /></li>
+			<li><img src="img/pct.jpg" width='204' height='160' /></li>
+			<li><img src="img/st.png" width='204' height='160' /></li>
+			<li><img src="img/steg.jpg" width='204' height='160' /></li>
+						<li><img src="img/cert.jpg" width='204' height='160' /></li>
+									<li><img src="img/oaca.jpg" width='204' height='160' /></li>
+
+<li><img src="img/ont.gif" width='204' height='160' /></li>
+<li><img src="img/bn.png" width='204' height='160' /></li>
+			
+		</ul>
+	</div>
+
+</article>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fot">
+<footer>
+<div class="contenu-footer" >
+     <div class="bloc footer-service">
+	      <h3><i class="fa fa-th-list"></i>Nos service <h3>
+		  <ul class="liste-service">
+         <li><a href="Instalationchambrefroid.html"><i class="fa fa-arrow-right" ></i>Instalation chambre froid</a></li>
+         <li><a href="Instalationclimatisationcentrale.html"><i class="fa fa-arrow-right" ></i>Instalation climatisation centrale</a></li>
+         <li><a href="entretien generale.html"><i class="fa fa-arrow-right" ></i>entretien generale</a></li>
+         <li><a href="reparation froid indistriele.html"><i class="fa fa-arrow-right" ></i>reparation froid indistriele</a></li>
+          </ul>
+		  </div>
+
+
+     <div class="bloc footer-contact">
+	      <h3><i class="fa fa-id-card-o" ></i>Rester en contact <h3>
+		  <ul class="liste-contact">
+         <li><a href="#"><i class="fa fa-phone"></i> &nbsp;      96 934 068</a></li>
+         <li><a href="#"><i class="fa fa-envelope" ></i>&nbsp; mounirchakroun@gmail.com</a></li>
+         <li><a href="#"><i class="fa fa-map-marker"> </i>&nbsp; &nbsp;  route gremda klm 1.5 avenue <br> &nbsp;&nbsp;&nbsp; &nbsp; karama 128  </a></li>
+		 <li><a href="https://www.facebook.com/Maintenance-Electro-Froid-620588291680063" target=_blank><i class="fa fa-facebook-official"></i> &nbsp; notre page facebook</a></li>
+
+      
+          </ul>
+     </div>
+	      <div class=" footer-horaires">
+	      <h3><i class="fa fa-clock-o" ></i>Les horaires <h3>
+		  <ul class="liste-horaires">
+         <li><a href="#"><i class="fa fa-check"></i>Lun 8h-18h</a></li>
+         <li><a href="#"><i class="fa fa-check"></i>Mar 8h-18h</a></li>
+         <li><a href="#"><i class="fa fa-check"></i>Mer 8h-18h </a></li>
+         <li><a href="#"><i class="fa fa-check"></i>Jeu 8h-18h</a></li>
+		   <li><a href="#"><i class="fa fa-check"></i>Ven 8h-18h</a></li>
+		     <li><a href="#"><i class="fa fa-check"></i>Sam 8h-12h</a></li>  
+			 <li><a href="#"><i class="fa fa-times"></i>Dim fermé</a></li>
+          </ul>
+		  </div>
+
+</div>
+
+
+
+</footer>
+
+</div>
+</body>
+
+</html>
